@@ -9,7 +9,6 @@
 
 <body>
   <div class="app">
-    <!-- ヘッダー -->
     <header class="app-header">
       <div class="header-top">
         <h1 class="title">CPP 道場</h1>
@@ -27,9 +26,14 @@
       </div>
     </header>
 
-    <!-- クイズカード -->
     <main id="quiz" class="card">
       <div class="question-area">
+        <!-- ★ 図（画像）がある場合だけ表示 -->
+        <div class="question-media">
+          <img id="questionImage" class="question-image" alt="問題図" style="display:none;" />
+          <div id="imageHint" class="image-hint" style="display:none;">※画像をタップすると拡大表示できます</div>
+        </div>
+
         <p id="question" class="question"></p>
       </div>
 
@@ -44,8 +48,15 @@
     </main>
 
     <footer class="footer">
-      <small>CPP 資格試験対策（ローカル動作）</small>
+      <small>CPP 資格試験対策（GitHub Pages対応）</small>
     </footer>
+  </div>
+
+  <!-- ★画像拡大モーダル -->
+  <div id="imgModal" class="img-modal" aria-hidden="true">
+    <div class="img-modal-backdrop" onclick="closeImageModal()"></div>
+    <img id="imgModalImage" class="img-modal-image" alt="拡大図" />
+    <button class="img-modal-close" onclick="closeImageModal()" aria-label="閉じる">×</button>
   </div>
 
   <script src="script.js"></script>

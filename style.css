@@ -29,7 +29,7 @@ body{
   padding:20px 0 32px;
 }
 
-/* ===== Header ===== */
+/* Header */
 .app-header{
   color:#fff;
   padding:10px 12px 14px;
@@ -39,6 +39,7 @@ body{
   display:flex;
   justify-content:space-between;
   align-items:flex-start;
+  gap: 10px;
 }
 
 .title{
@@ -49,6 +50,8 @@ body{
 .badges{
   display:flex;
   gap:8px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
 }
 
 .badge{
@@ -57,12 +60,9 @@ body{
   background:rgba(255,255,255,.2);
   font-size:12px;
 }
-
 .badge-sub{ opacity:.9; }
 
-.progress-row{
-  margin-top:10px;
-}
+.progress-row{ margin-top:10px; }
 
 .progress-text{
   font-weight:bold;
@@ -75,7 +75,6 @@ body{
   border-radius:999px;
   overflow:hidden;
 }
-
 .progressbar-inner{
   height:100%;
   width:0%;
@@ -83,7 +82,7 @@ body{
   transition:width .3s;
 }
 
-/* ===== Card ===== */
+/* Card */
 .card{
   background:var(--card);
   border-radius:var(--radius);
@@ -105,7 +104,7 @@ body{
   white-space:pre-wrap;
 }
 
-/* ===== Choices ===== */
+/* Choices */
 .choices{
   margin-top:14px;
   display:grid;
@@ -122,30 +121,28 @@ body{
   cursor:pointer;
   transition:.15s;
 }
-
-.choice:hover{
-  background:#f1f5f9;
-}
+.choice:hover{ background:#f1f5f9; }
 
 .choice input{
   width:18px;
   height:18px;
 }
 
-/* ===== Result ===== */
+/* Result */
 .result{
   margin-top:10px;
   font-weight:bold;
+  min-height: 1.4em;
 }
-
 .result.ok{ color:var(--ok); }
 .result.ng{ color:var(--ng); }
 
-/* ===== Buttons ===== */
+/* Buttons */
 .actions{
   margin-top:14px;
   display:flex;
   gap:10px;
+  flex-wrap:wrap;
 }
 
 button{
@@ -166,9 +163,91 @@ button{
   background:#e2e8f0;
 }
 
-/* ===== Footer ===== */
+/* Footer */
 .footer{
   margin-top:12px;
   text-align:center;
   color:rgba(255,255,255,.9);
+}
+
+/* ===== 画像（図）表示 ===== */
+.question-media{
+  margin-bottom: 10px;
+}
+
+.question-image{
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+}
+
+.image-hint{
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ===== 記述入力欄 ===== */
+.text-answer{
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  outline: none;
+}
+
+.text-answer:focus{
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(96,165,250,.25);
+}
+
+.text-hint{
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ===== 画像拡大モーダル ===== */
+.img-modal{
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.img-modal.open{ display:flex; }
+
+.img-modal-backdrop{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.65);
+}
+
+.img-modal-image{
+  position: relative;
+  max-width: 92vw;
+  max-height: 86vh;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.25);
+  background: #fff;
+  z-index: 1;
+}
+
+.img-modal-close{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.9);
+  font-size: 22px;
+  line-height: 42px;
+  padding: 0;
 }
