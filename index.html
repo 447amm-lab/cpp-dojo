@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CPP 道場</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="app">
+    <!-- ヘッダー -->
+    <header class="app-header">
+      <div class="header-top">
+        <h1 class="title">CPP 道場</h1>
+        <div class="badges">
+          <span class="badge" id="scoreBadge">得点 0</span>
+          <span class="badge badge-sub" id="accuracyBadge">正答率 0%</span>
+        </div>
+      </div>
+
+      <div class="progress-row">
+        <div id="progress" class="progress-text"></div>
+        <div class="progressbar">
+          <div id="progressBar" class="progressbar-inner"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- クイズカード -->
+    <main id="quiz" class="card">
+      <div class="question-area">
+        <p id="question" class="question"></p>
+      </div>
+
+      <div id="choices" class="choices"></div>
+
+      <p id="result" class="result"></p>
+
+      <div class="actions">
+        <button class="btn-primary" onclick="nextQuestion()">回答して次へ</button>
+        <button class="btn-secondary" onclick="reviewWrong()">間違えた問題を復習</button>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <small>CPP 資格試験対策（ローカル動作）</small>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+:root {
+  --bg1:#0ea5e9;
+  --bg2:#2563eb;
+  --card:#ffffff;
+  --text:#0f172a;
+  --muted:#64748b;
+  --line:#e2e8f0;
+  --primary:#2563eb;
+  --primary2:#1d4ed8;
+  --ok:#16a34a;
+  --ng:#dc2626;
+  --shadow:0 10px 30px rgba(0,0,0,.18);
+  --radius:14px;
+}
+
+* { box-sizing:border-box; }
+
+body{
+  margin:0;
+  font-family:"Noto Sans JP", system-ui, sans-serif;
+  background:linear-gradient(135deg,var(--bg1),var(--bg2));
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+}
+
+.app{
+  width:min(860px,95vw);
+  padding:20px 0 32px;
+}
+
+/* ===== Header ===== */
+.app-header{
+  color:#fff;
+  padding:10px 12px 14px;
+}
+
+.header-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+}
+
+.title{
+  margin:0;
+  font-size:26px;
+}
+
+.badges{
+  display:flex;
+  gap:8px;
+}
+
+.badge{
+  padding:6px 12px;
+  border-radius:999px;
+  background:rgba(255,255,255,.2);
+  font-size:12px;
+}
+
+.badge-sub{ opacity:.9; }
+
+.progress-row{
+  margin-top:10px;
+}
+
+.progress-text{
+  font-weight:bold;
+  font-size:14px;
+}
+
+.progressbar{
+  height:10px;
+  background:rgba(255,255,255,.25);
+  border-radius:999px;
+  overflow:hidden;
+}
+
+.progressbar-inner{
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg,#22c55e,#a3e635);
+  transition:width .3s;
+}
+
+/* ===== Card ===== */
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:18px;
+}
+
+.question-area{
+  background:#f8fafc;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:12px;
+}
+
+.question{
+  margin:0;
+  font-size:18px;
+  line-height:1.6;
+  white-space:pre-wrap;
+}
+
+/* ===== Choices ===== */
+.choices{
+  margin-top:14px;
+  display:grid;
+  gap:10px;
+}
+
+.choice{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:12px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  cursor:pointer;
+  transition:.15s;
+}
+
+.choice:hover{
+  background:#f1f5f9;
+}
+
+.choice input{
+  width:18px;
+  height:18px;
+}
+
+/* ===== Result ===== */
+.result{
+  margin-top:10px;
+  font-weight:bold;
+}
+
+.result.ok{ color:var(--ok); }
+.result.ng{ color:var(--ng); }
+
+/* ===== Buttons ===== */
+.actions{
+  margin-top:14px;
+  display:flex;
+  gap:10px;
+}
+
+button{
+  border:none;
+  border-radius:12px;
+  padding:12px 16px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.btn-primary{
+  background:var(--primary);
+  color:#fff;
+}
+.btn-primary:hover{ background:var(--primary2); }
+
+.btn-secondary{
+  background:#e2e8f0;
+}
+
+/* ===== Footer ===== */
+.footer{
+  margin-top:12px;
+  text-align:center;
+  color:rgba(255,255,255,.9);
+}
